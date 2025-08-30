@@ -19,6 +19,7 @@
 }
 
 .play1 {  /*main play area*/
+  background-color:green
   border:1px white solid;
   width:400px;
   height:400px;
