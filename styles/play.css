@@ -20,7 +20,7 @@
 
 .play1 {  /*main play area*/
   background-color:white;
-  width:px;
+  width:350px;
   height:650px;
   display:flex;
   gap:10px;
