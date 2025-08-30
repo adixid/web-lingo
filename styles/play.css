@@ -19,7 +19,7 @@
 }
 
 .play1 {  /*main play area*/
-  width:400px;
+  height:400px;
   display:flex;
   justify-content: space-around;
   align-items: flex-start;
