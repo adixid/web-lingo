@@ -19,7 +19,7 @@
 }
 
 .play1 {  /*main play area*/
-  width:550px;
+  width:450px;
   height:650px;
   display:flex;
   gap:10px;
