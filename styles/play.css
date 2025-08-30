@@ -20,8 +20,8 @@
 
 .play1 {  /*main play area*/
   border:1px white solid;
-  width:350px;
-  height:350px;
+  width:380px;
+  height:380px;
   display:flex;
   gap:10px;
   justify-content: flex-start;
