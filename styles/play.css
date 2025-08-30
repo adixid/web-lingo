@@ -7,9 +7,9 @@
 .letters {
   background-color: #0D0D33;
   border:rgb(165, 165, 165) 1px solid;
-  border-radius: 25px;;
-  height:120px;
-  width:120px;
+  border-radius: 25px;
+  height:100px;
+  width:100px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 80px;
   color:rgb(252, 252, 252);
