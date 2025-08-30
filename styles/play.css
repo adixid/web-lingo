@@ -19,9 +19,7 @@
 }
 
 .play1 {  /*main play area*/
-  background-color:green;
-  border:1px white solid;
-  
+
   display:flex;
   gap:10px;
   justify-content: flex-start;
