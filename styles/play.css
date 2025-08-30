@@ -19,7 +19,8 @@
 }
 
 .play1 {  /*main play area*/
-  width:450px;
+  background-color:white;
+  width:400px;
   height:650px;
   display:flex;
   gap:10px;
