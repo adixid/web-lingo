@@ -20,7 +20,7 @@
 
 .play1 {  /*main play area*/
   display:flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
 }
