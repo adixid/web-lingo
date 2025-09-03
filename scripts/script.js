@@ -8,7 +8,7 @@ const myIds = [["js-11", "js-12", "js-13", "js-14"],
               ["js-31", "js-32", "js-33", "js-34"],
               ["js-41", "js-42", "js-43", "js-44"],
               ["js-51", "js-52", "js-53", "js-54"]];
-      
+const revealIds = ["js-61", "js-62", "js-63", "js-64"];
 let counter = 0;
 const borderMarkerColour = "red";
 const correctPosition = 'green';
@@ -28,7 +28,7 @@ function showFirstLetter() {
 
 function myLetter(event) {  // type in letters and display them
   document.addEventListener("keydown", event => {
-    if (counter < 4)  {
+    if ((counter < 4) && (myAttempts < 5))  {
       let newLetter = document.getElementById(myIds[myAttempts][counter]); // where are we adding letter
       newLetter.textContent = event.key;  // letter pressed
       document.getElementById(myIds[myAttempts][counter]).style.color = "white"; // font colour
@@ -45,6 +45,7 @@ function myLetter(event) {  // type in letters and display them
 }
 
 function roundEvaluate() {
+  
   // first check all matching letters and mark them
   for (let i=0; i<4; i++) {
     if (myWord[i] ===  computerWord[i]) {
@@ -56,9 +57,20 @@ function roundEvaluate() {
       }
     } else if (computerWord.includes(myWord[i])) {  // mark correct letter in wrong position
         document.getElementById(myIds[myAttempts][i]).style.backgroundColor = wrongPosition;
-      }   
+      }   else if (!computerWord.includes(myWord[i])) {
+            document.getElementById(myIds[myAttempts][i]).style.backgroundColor = '#0D0D33';
+          }
     }
-    document.getElementById(myIds[myAttempts+1][0]).style.borderColor = borderMarkerColour;
+    if (myAttempts < 4) {
+      document.getElementById(myIds[myAttempts+1][0]).style.borderColor = borderMarkerColour;
+    }
+    if ((myAttempts === 4) && (myWord.join("") !== computerWord)) { // reveal correct word bellow attempts
+      for (let i=0; i<4; i++) {
+      document.getElementById(revealIds[i]).style.display = "flex";
+      document.getElementById(revealIds[i]).innerHTML = computerWord[i];
+      }
+    }
+
   // reset counters for next attempt
   myWord.splice(0,4);
   myAttempts += 1;
@@ -66,9 +78,9 @@ function roundEvaluate() {
 
   if (myAttempts === 1) {
     showFirstLetter();
-  }
+  } 
 }
-  
+
 findWord();
 console.log(computerWord);
 showFirstLetter()
