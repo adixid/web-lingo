@@ -20,14 +20,12 @@ const wrongPosition = 'orange';
 function newGame() {
   myRound += 1;
   myWord = [];
-  //myWord.splice(0,4); // reset myword
   myAttempts = 0;
   counter = 0;
   gameOver = false;
 
   findWord();
   showFirstLetter();
-  
   
   // hide these in new round
   document.getElementById("result-information").style.visibility = 'hidden';
@@ -70,7 +68,7 @@ function myLetter(event) {
     }
   }
   
-  if (event.code === "Backspace") { // correct entered letter
+  if (event.code === "Backspace") { // correct already entered letters
     if (counter > 0) {
       counter -= 1;
       
@@ -91,6 +89,7 @@ function myLetter(event) {
       }
     }
   }
+  // only accept letters
   if ((/^[a-zA-Z]$/.test(event.key)) && (gameOver === false)) {
     if ((counter < 4) && (myAttempts < 5))  {
     let newLetter = document.getElementById(myIds[myAttempts][counter]); // where are we adding letter
@@ -143,28 +142,28 @@ function roundEvaluate() {
                   document.getElementById(myIds[myAttempts][i]).style.backgroundColor = '#0D0D33';
                 }
           }
-          
-          /*
-          if (myAttempts < 4) {
-            document.getElementById(myIds[myAttempts+1][0]).style.borderColor = borderMarkerColour;
-          }
-          */
 
           if (myAttempts === 4) { // reveal correct word
             document.getElementById("result").style.visibility = 'visible';
             for (let i=0; i<4; i++) {
               document.getElementById(revealIds[i]).innerHTML = computerWord[i];
             }
+            document.getElementById("result-information").style.visibility = 'visible';
+            document.getElementById("result-information").style.backgroundColor = 'red';
+            document.getElementById("result-information").style.color = 'white';
+            document.getElementById('result-information').innerHTML = 'You lose. Better luck next time !';
+
             resultInfo();
+
             gameOver = true;
           }
       }
 
   // reset counters for next attempt
-  myWord.splice(0,4);
+  myWord = [];
   myAttempts += 1;
   counter = 0;
-
+  
   if (myAttempts === 1) {
     showFirstLetter();
   } 
