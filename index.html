@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>Lingo</title>
+  <link rel="icon" type="image/ico" href="images/favicon.ico">
   <link rel="stylesheet" href="styles/general.css"/>
   <link rel="stylesheet" href="styles/logo.css"/>
   <link rel="stylesheet" href="styles/play.css"/>
+  <link rel="stylesheet" href="styles/reveal.css"/>
   <link rel="stylesheet" href="styles/footer.css"/>
 </head>
 
@@ -18,6 +20,7 @@
       <div class="l1">N</div>
       <div class="l2">G</div>
       <div class="l1">O</div>
+      <div id="result-information">You lose. Better luck next time !</div>
     </div>
 
     <div class="playground">
@@ -49,25 +52,52 @@
         <div class="letters" id="js-54"></div>
       </div>
 
-      
-
       <div class="info">
-        <div class="myscore">My score:</div>
-        <div class="myscore">0</div>
-        <div class="myround">Round:</div>
-        <div class="myround">1</div>
+        <div class="myround">
+          <div class="info-spacing">Round number:</div>
+          <div class="info-spacing2" id="js-round">0</div>
+        </div>
+        <div class="myscore">
+          <div class="info-spacing">Correct words found:</div>
+          <div class="info-spacing2" id="js-score">0</div>
+         </div>
+        
+        <div class="notes">
+
+          <div class="position">
+            <div class="pos1">
+              <div class="correct-box">
+                <div class="correct-text">X</div>
+              </div>
+            </div>
+            <div class="pos2">a correct letter in a correct position</div>
+          </div>
+
+          <div class="position">
+            <div class="pos1">
+              <div class="wrong-box">
+                <div class="correct-text">X</div>
+              </div>
+            </div>
+            <div class="pos2">a correct letter in a wrong position</div>
+          </div>
+
+        </div>
+
+        <div id="result">
+          <div class="result-text">This is the computer's word:</div>
+          <div class="reveal">
+            <div class="result-letters" id="js-61"></div>
+            <div class="result-letters" id="js-62"></div>
+            <div class="result-letters" id="js-63"></div>
+            <div class="result-letters" id="js-64"></div>
+          </div>
+        </div>
       </div>
 
     </div>
 
-    <div class="reveal">
-        <div class="letters-reveal" id="js-61"></div>
-        <div class="letters-reveal" id="js-62"></div>
-        <div class="letters-reveal" id="js-63"></div>
-        <div class="letters-reveal" id="js-64"></div>
-    </div>
-
-    <div class='footer'></div>
+    <div id='footer'>Press SPACE to play a new game</div>
   
   </main>
 
