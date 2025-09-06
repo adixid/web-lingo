@@ -28,3 +28,20 @@
   text-align: center;
 }
 
+#result-information {
+  visibility:hidden;
+  margin-top:10px;
+  background-color: bisque;
+  margin-left:100px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  margin-left:auto;
+  height: 35px;
+  width: 460px;
+  background-color: rgb(255, 0, 0);
+  text-decoration: none;
+  font-size: 18;
+  color: rgb(255, 255, 255);
+  border-radius:20px;
+}
