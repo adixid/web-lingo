@@ -1,9 +1,11 @@
-let myRound = 0;
+let myRound = 1;
 let myScore = 0;
+
 let myWord;
 let myAttempts;
 let counter;
 let gameOver;
+//localStorage.clear()
 
 const myIds = [["js-11", "js-12", "js-13", "js-14"],
               ["js-21", "js-22", "js-23", "js-24"],
@@ -18,7 +20,10 @@ const wrongPosition = 'orange';
 
 
 function newGame() {
-  myRound += 1;
+ 
+  myRound = JSON.parse(localStorage.getItem('round'));
+  myScore = JSON.parse(localStorage.getItem('hiscore'));
+  
   myWord = [];
   myAttempts = 0;
   counter = 0;
@@ -40,8 +45,18 @@ function newGame() {
       document.getElementById(myIds[j][i]).innerHTML = "";
     }
   }
+  
   // update round info
+  if (myRound === null) {
+    myRound = 1;
+  }
+  console.log(myScore)
+  if (myScore === null) {
+    myScore = 0;
+  }
+  
   document.getElementById("js-round").innerHTML = myRound;
+  document.getElementById("js-score").innerHTML = myScore;
   
   showFirstLetter();
 }
@@ -122,12 +137,17 @@ function roundEvaluate() {
       document.getElementById('result-information').innerHTML = 'Well played, you found the correct word!';
       document.getElementById("footer").style.visibility = 'visible';
       resultInfo();
-      
+    
       myScore += 1;
       document.getElementById("js-score").innerHTML = myScore;
-      gameOver = true;
+      localStorage.setItem('hiscore', JSON.stringify(myScore)); // browser remembers the new score
 
-    } else {// otherwise check all matching letters and mark them
+      myRound += 1;
+      localStorage.setItem('round', JSON.stringify(myRound));
+      gameOver = true;
+      
+      // otherwise check all matching letters and mark them
+    } else {
         for (let i=0; i<4; i++) {
           if (myWord[i] ===  computerWord[i]) {
             document.getElementById(myIds[myAttempts][i]).style.backgroundColor = correctPosition;
@@ -154,6 +174,8 @@ function roundEvaluate() {
             document.getElementById('result-information').innerHTML = 'You lose. Better luck next time !';
 
             resultInfo();
+            myRound += 1;
+            localStorage.setItem('round', JSON.stringify(myRound));
 
             gameOver = true;
           }
@@ -164,9 +186,7 @@ function roundEvaluate() {
   myAttempts += 1;
   counter = 0;
   
-  if (myAttempts === 1) {
-    showFirstLetter();
-  } 
+  
 }
 
 function resultInfo() {
