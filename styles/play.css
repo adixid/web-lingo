@@ -46,26 +46,29 @@
 }
 
 .myround {
-  height: 120px;
+  margin-top: 30px;
+  height: 80px;
   width:300px;
 }
 
 .myscore {
-  height: 120px;
+  height: 80px;
   width:300px;
 }
 
 .info-spacing {
-  height:60px;
+  font-size: 18px;
+  height:30px;
   width:300px;
   text-decoration: none;
   display:flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .info-spacing2 {
-  height:60px;
+  font-size: 18px;
+  height:20px;
   width:300px;
   text-decoration: none;
   display:flex;
@@ -78,17 +81,27 @@
   width:300px;
   display:flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.help {
+  font-size:14px;
+  width:250px;
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 30px;
 }
 
 .position {
-  height:100px;
+  height:70px;
   width:300px;
   display:flex;
 }
 
 .pos1 {
   width:100px;
-  height:100px;  
+  height:70px;  
   display:flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +136,7 @@
 
 .pos2 {
   width:170px;
-  height:100px;  
+  height:70px;  
   font-size:14px;
   display:flex;
   justify-content: center;
