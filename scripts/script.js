@@ -83,6 +83,13 @@ function myLetter(event) {
     }
   }
   
+  if (event.code === "Delete") { // reset counters
+    localStorage.clear()
+    document.getElementById("js-round").innerHTML = 1;
+    document.getElementById("js-score").innerHTML = 0;
+
+  }
+
   if (event.code === "Backspace") { // correct already entered letters
     if (counter > 0) {
       counter -= 1;
