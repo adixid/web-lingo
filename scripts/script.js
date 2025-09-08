@@ -85,8 +85,11 @@ function myLetter(event) {
   
   if (event.code === "Delete") { // reset counters
     localStorage.clear()
-    document.getElementById("js-round").innerHTML = 1;
-    document.getElementById("js-score").innerHTML = 0;
+    myRound = 1;
+    myScore = 0;
+    document.getElementById("js-round").innerHTML = myRound;
+    document.getElementById("js-score").innerHTML = myScore;
+    
 
   }
 
