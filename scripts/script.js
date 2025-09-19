@@ -144,7 +144,7 @@ function roundEvaluate() {
       document.getElementById("result-information").style.visibility = 'visible';
       document.getElementById("result-information").style.backgroundColor = 'green';
       document.getElementById("result-information").style.color = 'white';
-      document.getElementById('result-information').innerHTML = 'Well played, you found the correct word!';
+      document.getElementById('result-information').innerHTML = 'Well played, you have found the correct word!';
       document.getElementById("footer").style.visibility = 'visible';
       resultInfo();
     
